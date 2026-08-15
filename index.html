@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="The Geometry of Empowerment" />
+        <link rel="stylesheet" href="./static/css/fontawesome.all.min.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
+        <script defer src="./static/js/fontawesome.all.min.js"></script>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-solarizedlight.min.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/prismjs-bibtex@2.1.0/prism-bibtex.min.js"></script>
+        <link rel="stylesheet" href="static/css/index.css" />
+
+        <title>The Geometry of Empowerment</title>
+
+        <script
+            type="text/javascript"
+            id="MathJax-script"
+            async
+            src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-svg.js"></script>
+        <script>
+            function selectContent(query) {
+                var range = document.createRange()
+                var selection = window.getSelection()
+                var elem = document.querySelector(query)
+                range.selectNodeContents(elem)
+                selection.removeAllRanges()
+                selection.addRange(range)
+            }
+        </script>
+    </head>
+
+    <body>
+        <script type="text/javascript">
+            window.MathJax = {
+                tex: {
+                    inlineMath: [
+                        ["$", "$"],
+                        ["\\(", "\\)"],
+                    ],
+                    displayMath: [
+                        ["$$", "$$"],
+                        ["\\[", "\\]"],
+                    ],
+                    processEscapes: true,
+                    macros: {
+                        S: "\\mathcal{S}",
+                        A: "\\mathcal{A}",
+                        D: "\\mathcal{D}",
+                        R: "\\mathbb{R}",
+                        E: "\\mathbb{E}",
+                        P: "\\mathrm{P}",
+                        var: "\\mathrm{Var}",
+                        cov: "\\mathrm{Cov}",
+                        argmin: "\\mathop{\\arg\\min}",
+                        argmax: "\\mathop{\\arg\\max}",
+                    },
+                },
+                svg: {
+                    fontCache: "global",
+                },
+            }
+        </script>
+        <header>
+            <h1>The Geometry of Empowerment</h1>
+            <div class="authors">
+                <span class="author equal">Catherine Ji</span>
+                <span class="affil">1</span>
+                <span class="author equal">Vivek Myers</span>
+                <span class="affil">2</span>
+                <span class="author">Sergey Levine</span>
+                <span class="affil">2</span>
+                <span class="author">Benjamin Eysenbach</span>
+                <span class="affil">1</span>
+            </div>
+            <div class="notes">
+                <span class="affil">1</span>
+                <span class="institution">Princeton University</span>
+                <span class="affil">2</span>
+                <span class="institution">UC Berkeley</span>
+            </div>
+            <div class="links">
+                <span class="link">
+                    <a href="./static/pdf/geometry_empowerment.pdf" target="_blank" class="button">
+                        <span class="icon"><i class="fas fa-file-pdf"></i></span><span>Paper</span>
+                    </a>
+                </span>
+                <!-- <span class="link"> -->
+                <!--   <a href="TODO" class="button"> -->
+                <!--     <span class="icon"><i class="ai ai-arxiv"></i></span><span>arXiv</span> -->
+                <!--   </a> -->
+                <!-- </span> -->
+                <span class="link">
+                    <a href="https://github.com/cj7280/skill-simplex" class="button">
+                        <span class="icon"><i class="fas fa-code"></i></span><span>Code</span>
+                    </a>
+                </span>
+            </div>
+        </header>
+
+        <main>
+            <!-- <section> -->
+            <!--   <div class="summary"> -->
+            <!--     <video id="overview" controls="" width="99%" poster="./static/videos/overview.png"> -->
+            <!--       <source src="static/videos/overview.mp4" type="video/mp4" /> -->
+            <!--     </video> -->
+            <!--   </div> -->
+            <!-- </section> -->
+
+            <section>
+                <div class="columns">
+                    <div class="abstract">
+                        <h3>Abstract</h3>
+                        <p>
+                            Empowerment captures the capacity for an agent to actively control its environment. While
+                            conceptually appealing as an information-theoretic quantity, the connection between
+                            empowerment and MDP centrality has remained an open question. In this work, we link
+                            empowerment maximization and skill-learning methods to provide new geometries for
+                            interpreting and analyzing empowerment. Our analyses answer longstanding open questions on
+                            the connections between empowerment and centrality. Our analysis also reveals distinctions
+                            between information and reward geometries, highlighting important theoretical implications
+                            to build scalable empowerment-maximization methods.
+                        </p>
+                    </div>
+                    <!-- <div class="thin vertical"> -->
+                    <!--   <img src="static/figures/img2.svg" /> -->
+                    <!-- </div> -->
+                </div>
+            </section>
+
+            <section>
+                <h2>Key Insight: Empowered States are Central States</h2>
+                <p>
+                    An intelligent agent should be in control of its future. A well-trained agent at a mountain can
+                    either navigate to and stay at the peak (being in control) or choose and traverse down one of many
+                    trails from the peak (actively exerting control). While both useful, these behaviors are distinct.
+                </p>
+                <p>
+                    Empowerment is an information-theoretic object that quantifies controllability in terms of bits.
+                    Potential empowerment measures the maximal bits an agent's actions can inform its future state.
+                    Effective empowerment quantifies how readily an agent's policy actively informs its future state. In
+                    this work, we formally show high potential empowerment states lie at centers of reachable regions in
+                    the state occupancy simplex.
+                </p>
+                <div class="columns">
+                    <div class="wide">
+                        <img src="static/figures/10_two_policies.png" />
+                    </div>
+                    <div class="thin">
+                        <p>
+                            <b>Figure.</b>
+                            Two trained empowerment-maximizing policies characterize central states in an MDP. The
+                            potential policy ascends the empowerment landscape, while the effective policy maximizes
+                            mutual information between skills and future states, associating each skill with distinct
+                            actions.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Central Insight: Information and Reward Geometries Can Diverge</h2>
+                <p>
+                    In tabular settings, empowered agents navigate to central states from which they can adapt to
+                    downstream reward functions. However, attempting to extend this result to continuous settings
+                    reveals an important insight: information and reward geometries can diverge. An arbitrarily
+                    empowered state can provide arbitrarily small adaptation in a continuous MDP with continuous
+                    rewards. The same misalignment appears in discrete settings once the reward prior is anisotropic.
+                </p>
+                <p>
+                    Thus, empowered agents are not generally adaptive agents in the continuous setting. Scalable
+                    formulations of empowerment maximization must address this discrepancy between information and
+                    reward adaptation geometries. Our theoretical results show that unifying empowerment and adaptation
+                    requires alternative formulations that align these two geometric perspectives.
+                </p>
+                <div class="margin">
+                    <img src="static/figures/fig_centrality.png" />
+                    <p class="caption">
+                        <b>Figure.</b>
+                        Central states in an MDP and the geometry of empowerment. High empowerment states occupy central
+                        positions in the reachable state space, providing agents with maximum control over future
+                        outcomes.
+                    </p>
+                </div>
+            </section>
+
+            <section>
+                <h2>Theoretical Contributions</h2>
+                <div class="columns">
+                    <div class="half">
+                        <img src="static/figures/fig_centrality.png" />
+                        <p class="caption">
+                            The geometry of empowerment reveals that high-empowerment states occupy central positions in
+                            the reachable state space, providing agents maximum control over future outcomes.
+                        </p>
+                    </div>
+                    <div class="half">
+                        <img src="static/figures/fig_two_policies.png" />
+                        <p class="caption">
+                            Potential and effective empowerment characterize different aspects of controllability:
+                            potential empowerment measures accessible control while effective empowerment measures
+                            actively exerted control.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>
+                    ${\bf B\kern-.05em{\small I\kern-.025em B}\kern-.08em
+                    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}$
+                </h2>
+                <pre
+                    class="language-bibtex bibtex"
+                    id="bibtex"
+                    onclick="selectContent('#bibtex')"><code>@misc{ji2026geometry,
+  title={The Geometry of Empowerment},
+  author={Ji, Catherine and Myers, Vivek and Levine, Sergey and Eysenbach, Benjamin},
+  year={2026},
+  howpublished={Available at \url{https://github.com/vivekmyers/empowerment_geometry}}
+}</code></pre>
+            </section>
+        </main>
+    </body>
+</html>
