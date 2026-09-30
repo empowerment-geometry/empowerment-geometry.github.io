@@ -121,16 +121,8 @@
             <p data-source="adaptation-motivation">Prior works conjecture that empowerment is a generic way for agents to do goal-oriented tasks. However, empowerment does not have immediate obvious connections to downstream task performance.</p>
             <p data-source="adaptation-setup">To formalize adaptation when rewards are not available during training, we define an adaptation objective with respect to a reward prior distribution $\mathcal R$. For the following result, we consider linear adaptation objective $J$ for the skill set learned by an empowerment-maximizing agent, which is exactly the best skill's return averaged over the reward prior.</p>
             <h3>Potential empowerment lower bounds skill adaptation under an uninformed reward prior.</h3>
-            <div class="review-old">
-            <div class="theorem">
-                <p class="statement-title"><a href="./static/pdf/geometry_empowerment.pdf#page=10" target="_blank" rel="noopener">Theorem 4.3</a>. Tabular empowerment lower bounds reward adaptation.</p>
-                <p data-source="adaptation-result">We show that, in the tabular setting, this notion of centrality achieved by a set of skills directly lower bounds an agent's ability to adapt to unknown rewards (sampled from an uninformed prior).</p>
-            </div>
-            </div>
-            <div class="review-new">
             <div class="theorem">
                 <p class="statement-title"><a href="./static/pdf/geometry_empowerment.pdf#page=10" target="_blank" rel="noopener">Theorem 4.3</a>. In tabular settings, empowerment lower bounds adaptation to rewards drawn from an uninformed, isotropic Gaussian prior.</p>
-            </div>
             </div>
             <p data-source="adaptation-definition">Here, we define adaptation as a <em>skill adaptation</em> to a sampled reward. At test time, an agent must select a skill $z \in \mathcal Z$ to adapt to a sampled reward function $r \sim \mathcal R$. The reward prior treats all states the same and does not prefer particular states.</p>
             <p data-source="best-skill-adaptation">In the best case, the agent selects the skill $z$ with the highest expected return.</p>
