@@ -1,4 +1,5 @@
-name = $(HOME)/papers/2026-geom-emp/src_theory_paper
+~ = $(HOME)
+name = $~/papers/2026-emp-geom/
 slides = 
 
 all: $(shell perl hdeps.pl index.html)
@@ -30,17 +31,12 @@ static/%.png: static/%.pdf
 static/figures/%: $(name)/figures/%
 	cp $< $@
 
-static/figures/%: $(name)/../figures/%
-	cp $< $@
-
 static/figures/%: $(name)/figures/%
 	mkdir -p $(@D)
 	cp $< $@
 
-static/figures/%: $(name)/theory_final_figs/%
-	cp $< $@
 
-static/pdf/%: $(name)/../dist/%
+static/pdf/%: $(name)/dist/%
 	cp $< $@
 
 build:
